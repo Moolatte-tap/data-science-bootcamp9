@@ -1,6 +1,5 @@
 # Data Transformation
 
-# library tidyverse
 # data transformation => dplyr
 # 1. select
 # 2. filter
