@@ -6,3 +6,6 @@
 # 3. arrange
 # 4. mutate > create new column
 # 5. summarize + group by
+
+
+# connect postgre DB online
