@@ -1,0 +1,82 @@
+---
+title: "Homework Data viz"
+author: "TAP Chayathorn"
+date: "2023-12-04"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Homework
+## 1. create Rmarkdown
+## 2. create 5 Charts
+## data = mpg
+
+## Explore data
+
+```{r,message=FALSE,echo=FALSE}
+library(tidyverse)
+data("mpg")
+head(mpg)
+```
+
+## First chart
+```{r,fig.width=5}
+ggplot(mpg,aes(hwy,displ))+
+  geom_point(alpha=0.5)+
+  labs(title="Relationship between Highway MPG and Engine displacement",
+       x="Highway MPG",
+       y="Engine displacement")+
+  theme_minimal()
+```
+
+## Second chart
+```{r,fig.width=5}
+ggplot(mpg,aes(cty))+
+  geom_boxplot(color="Blue")+
+  labs(title="Relationship between Highway MPG and Engine displacement",
+       x="Highway MPG",
+       y="Engine displacement")+
+  theme_minimal()+
+  facet_wrap(~manufacturer,4)
+```
+
+## Third chart
+```{r,fig.width=5}
+ggplot(mpg,aes(cty))+
+  geom_bar()+
+  labs(
+    title="Bar chart CITY",
+    subtitle="CITY MPG ggplot2",
+    caption="Data: MPG",
+    x="city miles per gallon"
+  ) +
+  theme_minimal()
+```
+
+## Forth chart
+```{r}
+mpg %>%
+  group_by(class) %>%
+  summarise(avg_hwy=mean(hwy)) %>%
+  ggplot(aes(x=reorder(class,avg_hwy),y=avg_hwy))+
+  geom_col()+
+  labs(title="Average Highway MPG by Car Type",
+       x="Car Type",
+       y="Average Highway")+
+  theme_minimal()
+
+```
+## Fifth chart
+```{r}
+ggplot(mpg, aes(displ, cty)) +
+geom_point() +
+geom_smooth(formula = y ~ x, method = "lm") +
+labs(
+title = "Relationship between Engine Displacement and City MPG",
+x = "Engine Displacement",
+y = "City MPG"
+) +
+theme_minimal()
+```
+
