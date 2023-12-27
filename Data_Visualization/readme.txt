@@ -19,3 +19,4 @@
 ## Homework
 ## 1. create Rmarkdown
 ## 2. create 5 Charts
+## mini dashboard whit ggsheets ใช้ freefire vs. pubg
