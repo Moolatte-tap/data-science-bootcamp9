@@ -11,3 +11,4 @@
 # connect postgre DB online
 
 # connect postgre DB Homework
+# write Data in postgre DB with R
